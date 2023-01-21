@@ -1,1 +1,1 @@
-test 7] jenkins
+test docker compose jenkins
