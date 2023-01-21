@@ -1,19 +1,19 @@
 version: "2.6"
 services:
-  auth:
+  apachejenkins:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: auth-service
+    container_name: apachejenkins-service
     restart: always
 #    ports:
 #      - 8020:8020
     labels:
-      - "traefik.http.routers.auth.rule=Host(`pregps.dmetrix.cl`) && PathPrefix(`/jenkins/test`)"
+      - "traefik.http.routers.apachejenkins.rule=Host(`pregps.dmetrix.cl`) && PathPrefix(`/jenkins/test`)"
       - "traefik.port=80"
-      - "traefik.http.services.auth.loadbalancer.server.port=80"
-      - "traefik.http.routers.auth.entrypoints=websecurity"
-      - "traefik.http.routers.auth.tls.certresolver=myresolver"
+      - "traefik.http.services.apachejenkins.loadbalancer.server.port=80"
+      - "traefik.http.routers.apachejenkins.entrypoints=websecurity"
+      - "traefik.http.routers.apachejenkins.tls.certresolver=myresolver"
     networks:
       - traefik_network
 #    volumes:
