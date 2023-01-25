@@ -1,1 +1,1 @@
-test dockerFILE jenkins
+test docker compose jenkins
