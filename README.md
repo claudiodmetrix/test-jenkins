@@ -1,1 +1,1 @@
-test docker compose 2 jenkins
+test docker compose 3 jenkins
